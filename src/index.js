@@ -7,7 +7,6 @@ import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import App from './components/app';
 import Home from './components/home';
 import Resources from './components/resources';
-import requireAuth from './components/requireAuth';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -17,7 +16,7 @@ ReactDOM.render(
     <Router history={browserHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
-        <Route path="/resources" component={requireAuth(Resources)} />
+        <Route path="/resources" component={Resources} />
       </Route>
     </Router>
   </Provider>
